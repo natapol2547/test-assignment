@@ -10,6 +10,12 @@ const roman_numerals = [
 
 function number_to_roman(num: number): string {
     let result = "";
+    for (const roman of roman_numerals) {
+        while (num >= roman.value) {
+            result += roman.symbol;
+            num -= roman.value;
+        }
+    }
     return result;
 }
 
